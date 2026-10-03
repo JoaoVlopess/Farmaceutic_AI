@@ -1,0 +1,1 @@
+from farmaceutic import SolicitacaoInformacao, RespostaFarmaceutic

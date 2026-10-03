@@ -1,0 +1,1 @@
+from .farmaceutic_agent import gerar_informacao

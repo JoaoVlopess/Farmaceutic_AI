@@ -1,0 +1,24 @@
+# --- Python ---
+# Ignora a pasta do ambiente virtual (venv) que criamos antes
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# --- Ambientes e Segurança ---
+# Ignora arquivos com senhas, chaves de API e tokens
+.env
+.env.local
+
+# --- Ambientes de Desenvolvimento (IDEs) ---
+# Ignora configurações específicas do VS Code ou PyCharm
+.vscode/
+.idea/
+
+# --- Sistema Operacional ---
+# Ignora arquivos temporários criados pelo Windows ou Mac
+Thumbs.db
+.DS_Store
+
+.clj-kondo
+.lsp

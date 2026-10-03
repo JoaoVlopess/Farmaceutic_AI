@@ -1,10 +1,12 @@
+#tools/tratamento/pdf
+
 """Ferramentas de extração e tratamento de PDFs de bulas."""
 
 from pathlib import Path
 
 from pypdf import PdfReader
 
-from utils.limpeza_bula import filtrar_paginas_bula, normalizar_espacos
+from utils import filtrar_paginas_bula, normalizar_espacos
 
 
 def extrair_paginas_pdf(caminho_pdf: str | Path) -> list[str]:

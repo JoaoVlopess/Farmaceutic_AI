@@ -1,23 +1,76 @@
 import re
+from hashlib import sha256
 
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from tools.tratamento_pdf import extrair_texto_pdf
 from RAG.banco_vetorial import obter_banco_vetorial
+from tools import extrair_paginas_pdf
+from utils import (
+    eh_inicio_conteudo_bula,
+    filtrar_paginas_bula,
+    identificar_forma_farmaceutica,
+    identificar_nome_medicamento,
+    normalizar_nome_medicamento,
+)
+
+
+def criar_documentos(caminho_arquivo: str) -> list[Document]:
+    """
+    Cria um Document para cada bula/apresentação encontrada no PDF.
+
+    Um PDF do Bulário pode reunir mais de uma bula. Separá-las antes do
+    chunking impede que seções de medicamentos ou apresentações diferentes
+    recebam os mesmos metadados.
+    """
+    paginas = filtrar_paginas_bula(extrair_paginas_pdf(caminho_arquivo))
+    grupos_de_paginas: list[list[str]] = []
+    grupo_atual: list[str] = []
+    grupo_ja_tem_inicio = False
+
+    for pagina in paginas:
+        pagina_inicia_bula = eh_inicio_conteudo_bula(pagina)
+
+        if pagina_inicia_bula and grupo_ja_tem_inicio:
+            grupos_de_paginas.append(grupo_atual)
+            grupo_atual = []
+
+        grupo_atual.append(pagina)
+        if pagina_inicia_bula:
+            grupo_ja_tem_inicio = True
+
+    if grupo_atual:
+        grupos_de_paginas.append(grupo_atual)
+
+    documentos: list[Document] = []
+    for indice, paginas_da_bula in enumerate(grupos_de_paginas, start=1):
+        texto = "\n\n".join(paginas_da_bula)
+        medicamento = identificar_nome_medicamento(texto)
+        forma_farmaceutica = identificar_forma_farmaceutica(texto)
+        documentos.append(
+            Document(
+                page_content=texto,
+                metadata={
+                    "source": caminho_arquivo,
+                    "bula_index": indice,
+                    "medicamento": medicamento,
+                    "medicamento_normalizado": normalizar_nome_medicamento(medicamento),
+                    "forma_farmaceutica": forma_farmaceutica,
+                },
+            )
+        )
+
+    return documentos
+
 
 def criar_documento(caminho_arquivo: str) -> Document:
-    """
-    Cria um objeto Document a partir de um arquivo PDF.
-
-    Args:
-        caminho_arquivo (str): O caminho para o arquivo PDF.
-
-    Returns:
-        Document: Um objeto Document contendo o conteúdo do PDF.
-    """
-    texto = extrair_texto_pdf(caminho_arquivo, limpar=True)
-    return Document(page_content=texto, metadata={"source": caminho_arquivo})
+    """Cria um documento quando o PDF contém exatamente uma bula."""
+    documentos = criar_documentos(caminho_arquivo)
+    if len(documentos) != 1:
+        raise ValueError(
+            f"O PDF contém {len(documentos)} bulas. Use criar_documentos()."
+        )
+    return documentos[0]
 
 
 
@@ -52,7 +105,7 @@ def dividir_bula(
         ]
     )
 
-    chunks_finais = []
+    chunks_finais: list[Document] = []
 
     for secao in secoes:
 
@@ -67,34 +120,47 @@ def dividir_bula(
             secao
         )
 
-        if not match:
-            continue
-
-        numero_secao = match.group(1)
-        titulo_secao = match.group(2).strip()
-
-        # Retira o título para dividir apenas o conteúdo
-        conteudo = secao[match.end():].strip()
+        if match:
+            numero_secao = int(match.group(1))
+            titulo_secao = match.group(2).strip()
+            conteudo = secao[match.end():].strip()
+        else:
+            # Preserva nome, apresentações e composição, que aparecem antes
+            # da primeira seção numerada e também são relevantes para o RAG.
+            numero_secao = 0
+            titulo_secao = "APRESENTAÇÕES E COMPOSIÇÃO"
+            conteudo = secao
 
         # Para cada sessão aplica o splitter
         sub_chunks = splitter.create_documents([conteudo])
 
         for indice, sub_chunk in enumerate(sub_chunks, start=1):
 
-            chunk_id = f"{numero_secao}.{indice}"
+            chunk_id = f"{documento.metadata['bula_index']}.{numero_secao}.{indice}"
+            medicamento = documento.metadata["medicamento"]
 
             texto_chunk = (
+                f"Medicamento: {medicamento}\n"
+                f"Forma farmacêutica: {documento.metadata['forma_farmaceutica']}\n"
                 f"{numero_secao}. {titulo_secao}\n\n"
                 f"{sub_chunk.page_content}"
             )
 
+            id_documento = sha256(
+                (
+                    f"{documento.metadata['source']}|"
+                    f"{chunk_id}"
+                ).encode("utf-8")
+            ).hexdigest()
+
             chunks_finais.append(
                 Document(
+                    id=id_documento,
                     page_content=texto_chunk,
                     metadata={
                         **documento.metadata,
                         "chunk_id": chunk_id,
-                        "section_number": int(numero_secao),
+                        "section_number": numero_secao,
                         "section_title": titulo_secao
                     }
                 )
@@ -104,8 +170,10 @@ def dividir_bula(
 
 def indexar_chunks(chunks: list[Document]) -> None:
     """Adiciona os chunks à coleção configurada no banco vetorial."""
+    if not chunks:
+        return
     banco = obter_banco_vetorial()
-    banco.add_documents(chunks)
+    banco.add_documents(chunks, ids=[chunk.id for chunk in chunks])
 
 caminhos_pdf = [
     "bulas_pdf/bula_1791032447500.pdf",
@@ -113,12 +181,19 @@ caminhos_pdf = [
 ]
 
 def main():
+    total_chunks = 0
     for caminho in caminhos_pdf:
-        documento = criar_documento(caminho)
-        chunks = dividir_bula(documento)
-        indexar_chunks(chunks)
+        for documento in criar_documentos(caminho):
+            chunks = dividir_bula(documento)
+            indexar_chunks(chunks)
+            total_chunks += len(chunks)
+            print(
+                f"{documento.metadata['medicamento']}: "
+                f"{documento.metadata['forma_farmaceutica']}, "
+                f"{len(chunks)} chunks indexados."
+            )
 
-    print(f"Indexação concluída: {len(chunks)} chunks.")
+    print(f"Indexação concluída: {total_chunks} chunks no total.")
 
 
 if __name__ == "__main__":

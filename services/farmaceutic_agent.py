@@ -12,11 +12,11 @@ from langchain.agents.structured_output import ProviderStrategy
 
 load_dotenv()
 if not os.getenv("GEMINI_API_KEY"):
-        raise RuntimeError(
-        "A variável GOOGLE_API_KEY não foi encontrada no arquivo .env"
+    raise RuntimeError(
+        "A variável GEMINI_API_KEY não foi encontrada no arquivo .env"
     )
 
-modelo = ChatGoogleGenerativeAI (
+modelo = ChatGoogleGenerativeAI(
     model="gemini-3.5-flash-lite"
 )
 
@@ -33,7 +33,20 @@ def gerar_informacao(solicitacao: SolicitacaoInformacao) -> RespostaFarmaceutic:
     Pergunta: {solicitacao.pergunta}
     """
 
-    vetorial_content = buscar_bula(solicitacao.pergunta,solicitacao.medicamento, solicitacao.forma_farmaceutica, quantidade=3)
+    vetorial_content = buscar_bula(
+        solicitacao.pergunta,
+        solicitacao.medicamento,
+        solicitacao.forma_farmaceutica,
+        quantidade=3,
+    )
+
+    if not vetorial_content:
+        return RespostaFarmaceutic(
+            explicacao=(
+                "Não encontrei conteúdo indexado para o medicamento e a "
+                "forma farmacêutica informados."
+            )
+        )
 
     mensagem_usuario += "\n\nContexto recuperado da Bula:\n"
     for i, documento in enumerate(vetorial_content, start=1):
@@ -50,6 +63,4 @@ def gerar_informacao(solicitacao: SolicitacaoInformacao) -> RespostaFarmaceutic:
         }
     )
 
-    for mensagem in resultado["messages"]:
-        mensagem.pretty_print()
     return resultado["structured_response"]

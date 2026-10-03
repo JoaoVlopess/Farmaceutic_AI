@@ -1,12 +1,17 @@
 from models import SolicitacaoInformacao
 from services import gerar_informacao
-# from tools.musica import transpor_nota
 
 
-solicitacao = SolicitacaoInformacao(
-    medicamento = "Dorflex",
-    forma_farmaceutica = "comprimido",
-    pergunta = "Qual a periodicidade que eu devo tomar dorflex?"
-)
+def main() -> None:
+    solicitacao = SolicitacaoInformacao(
+        medicamento="Dorflex",
+        forma_farmaceutica="comprimido",
+        pergunta="A medicação tem algum efeito colateral?",
+    )
 
-print(gerar_informacao(solicitacao))
+    resposta = gerar_informacao(solicitacao)
+    print(resposta.model_dump_json(indent=2))
+
+
+if __name__ == "__main__":
+    main()

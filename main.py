@@ -1,17 +1,8 @@
-from models import SolicitacaoInformacao
-from services import gerar_informacao
+from RAG.monitorar_bulas import monitorar_pasta
 
 
 def main() -> None:
-    solicitacao = SolicitacaoInformacao(
-        medicamento="Dorflex",
-        forma_farmaceutica="comprimido",
-        pergunta="A medicação tem algum efeito colateral?",
-    )
-
-    resposta = gerar_informacao(solicitacao)
-    print(resposta.model_dump_json(indent=2))
-
+    monitorar_pasta("bulas_pdf")
 
 if __name__ == "__main__":
     main()

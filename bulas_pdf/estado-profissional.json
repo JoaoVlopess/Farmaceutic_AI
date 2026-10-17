@@ -1,0 +1,2304 @@
+{
+  "versao": 1,
+  "criadoEm": "2026-10-17T13:13:21.829Z",
+  "atualizadoEm": "2026-10-17T13:35:09.182Z",
+  "itens": [
+    {
+      "id": "001",
+      "original": "Dipirona (Novalgina, Anador)",
+      "principal": "Dipirona",
+      "termosBusca": [
+        "Dipirona",
+        "Novalgina",
+        "Anador"
+      ],
+      "slug": "dipirona",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Error: O aplicativo da ANVISA ainda não terminou de carregar.\n    at <anonymous>:5:15\n    at <anonymous>:52:7",
+        "statusHttp": null,
+        "data": "2026-10-17T13:13:22.901Z"
+      }
+    },
+    {
+      "id": "002",
+      "original": "Paracetamol (Tylenol)",
+      "principal": "Paracetamol",
+      "termosBusca": [
+        "Paracetamol",
+        "Tylenol"
+      ],
+      "slug": "paracetamol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Paracetamol",
+        "nomeEncontrado": "PARACETAMOL",
+        "numeroRegistro": "102350764",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\002-paracetamol-profissional.pdf",
+            "bytes": 53433
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "003",
+      "original": "Ibuprofeno (Advil, Alivium)",
+      "principal": "Ibuprofeno",
+      "termosBusca": [
+        "Ibuprofeno",
+        "Advil",
+        "Alivium"
+      ],
+      "slug": "ibuprofeno",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Ibuprofeno",
+        "nomeEncontrado": "ibuprofeno",
+        "numeroRegistro": "144930078",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\003-ibuprofeno-profissional.pdf",
+            "bytes": 393593
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "004",
+      "original": "Dorflex",
+      "principal": "Dorflex",
+      "termosBusca": [
+        "Dorflex"
+      ],
+      "slug": "dorflex",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Dorflex",
+        "nomeEncontrado": "DORFLEX",
+        "numeroRegistro": "186200008",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\004-dorflex-profissional.pdf",
+            "bytes": 868939
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "005",
+      "original": "Neosaldina",
+      "principal": "Neosaldina",
+      "termosBusca": [
+        "Neosaldina"
+      ],
+      "slug": "neosaldina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Neosaldina",
+        "nomeEncontrado": "NEOSALDINA",
+        "numeroRegistro": "178170899",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\005-neosaldina-profissional.pdf",
+            "bytes": 395715
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "006",
+      "original": "Torsilax",
+      "principal": "Torsilax",
+      "termosBusca": [
+        "Torsilax"
+      ],
+      "slug": "torsilax",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Torsilax",
+        "nomeEncontrado": "TORSILAX",
+        "numeroRegistro": "155840234",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\006-torsilax-profissional.pdf",
+            "bytes": 372408
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "007",
+      "original": "Diclofenaco potássico (Cataflam)",
+      "principal": "Diclofenaco potássico",
+      "termosBusca": [
+        "Diclofenaco potássico",
+        "Cataflam"
+      ],
+      "slug": "diclofenaco-potassico",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Diclofenaco potássico",
+        "nomeEncontrado": "diclofenaco potássico",
+        "numeroRegistro": "102350507",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\007-diclofenaco-potassico-profissional.pdf",
+            "bytes": 291955
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "008",
+      "original": "Diclofenaco sódico (Voltaren)",
+      "principal": "Diclofenaco sódico",
+      "termosBusca": [
+        "Diclofenaco sódico",
+        "Voltaren"
+      ],
+      "slug": "diclofenaco-sodico",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Diclofenaco sódico",
+        "nomeEncontrado": "DICLOFENACO SÓDICO",
+        "numeroRegistro": "103870052",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\008-diclofenaco-sodico-profissional.pdf",
+            "bytes": 420294
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "009",
+      "original": "Ácido acetilsalicílico (Aspirina)",
+      "principal": "Ácido acetilsalicílico",
+      "termosBusca": [
+        "Ácido acetilsalicílico",
+        "Aspirina"
+      ],
+      "slug": "acido-acetilsalicilico",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "ANVISA HTTP 499: <!DOCTYPE html>\r\n<html dir=\"ltr\" lang=\"pt\" data-theme=\"&UiTheme&\">\r\n\t<head>\r\n\t\t<title>Kaspersky Premium</title>\r\n\t\t<meta charset=\"UTF-8\" />\r\n\t\t<meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\"/>\r\n\t\t<meta http-equiv=\"Pragma\" content=\"no-cache\" />\r\n\t\t<meta http-equiv=\"Cache-Control\" content=\"no-cac",
+        "statusHttp": 499,
+        "data": "2026-10-17T13:14:44.617Z"
+      }
+    },
+    {
+      "id": "010",
+      "original": "Naproxeno (Flanax)",
+      "principal": "Naproxeno",
+      "termosBusca": [
+        "Naproxeno",
+        "Flanax"
+      ],
+      "slug": "naproxeno",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Naproxeno",
+        "nomeEncontrado": "naproxeno",
+        "numeroRegistro": "104971545",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\010-naproxeno-profissional.pdf",
+            "bytes": 236388
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "011",
+      "original": "Nimesulida (Nisulid)",
+      "principal": "Nimesulida",
+      "termosBusca": [
+        "Nimesulida",
+        "Nisulid"
+      ],
+      "slug": "nimesulida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Nimesulida",
+        "nomeEncontrado": "NIMESULIDA",
+        "numeroRegistro": "100430909",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\011-nimesulida-profissional.pdf",
+            "bytes": 676693
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "012",
+      "original": "Meloxicam (Movatec)",
+      "principal": "Meloxicam",
+      "termosBusca": [
+        "Meloxicam",
+        "Movatec"
+      ],
+      "slug": "meloxicam",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Meloxicam",
+        "nomeEncontrado": "MELOXICAM",
+        "numeroRegistro": "102350527",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\012-meloxicam-profissional.pdf",
+            "bytes": 569047
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "013",
+      "original": "Cetoprofeno (Profenid)",
+      "principal": "Cetoprofeno",
+      "termosBusca": [
+        "Cetoprofeno",
+        "Profenid"
+      ],
+      "slug": "cetoprofeno",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Cetoprofeno",
+        "nomeEncontrado": "CETOPROFENO",
+        "numeroRegistro": "102350610",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\013-cetoprofeno-profissional.pdf",
+            "bytes": 287823
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "014",
+      "original": "Tramadol (Tramal)",
+      "principal": "Tramadol",
+      "termosBusca": [
+        "Tramadol",
+        "Tramal"
+      ],
+      "slug": "tramadol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Tramal",
+        "nomeEncontrado": "Tramal",
+        "numeroRegistro": "186100003",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\014-tramadol-profissional.pdf",
+            "bytes": 699884
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "015",
+      "original": "Buscopan Composto",
+      "principal": "Buscopan Composto",
+      "termosBusca": [
+        "Buscopan Composto"
+      ],
+      "slug": "buscopan-composto",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Buscopan Composto",
+        "nomeEncontrado": "BUSCOPAN COMPOSTO",
+        "numeroRegistro": "178170972",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\015-buscopan-composto-profissional.pdf",
+            "bytes": 603071
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "016",
+      "original": "Tandrilax",
+      "principal": "Tandrilax",
+      "termosBusca": [
+        "Tandrilax"
+      ],
+      "slug": "tandrilax",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Tandrilax",
+        "nomeEncontrado": "TANDRILAX",
+        "numeroRegistro": "105730100",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\016-tandrilax-profissional.pdf",
+            "bytes": 571931
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "017",
+      "original": "Etoricoxibe (Arcoxia)",
+      "principal": "Etoricoxibe",
+      "termosBusca": [
+        "Etoricoxibe",
+        "Arcoxia"
+      ],
+      "slug": "etoricoxibe",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Etoricoxibe",
+        "nomeEncontrado": "etoricoxibe",
+        "numeroRegistro": "154230359",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\017-etoricoxibe-profissional.pdf",
+            "bytes": 1004050
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "018",
+      "original": "Cimegripe / Benegrip",
+      "principal": "Cimegripe",
+      "termosBusca": [
+        "Cimegripe",
+        "Benegrip"
+      ],
+      "slug": "cimegripe",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "ANVISA HTTP 499: <!DOCTYPE html>\r\n<html dir=\"ltr\" lang=\"pt\" data-theme=\"&UiTheme&\">\r\n\t<head>\r\n\t\t<title>Kaspersky Premium</title>\r\n\t\t<meta charset=\"UTF-8\" />\r\n\t\t<meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\"/>\r\n\t\t<meta http-equiv=\"Pragma\" content=\"no-cache\" />\r\n\t\t<meta http-equiv=\"Cache-Control\" content=\"no-cac",
+        "statusHttp": 499,
+        "data": "2026-10-17T13:18:12.884Z"
+      }
+    },
+    {
+      "id": "019",
+      "original": "Resfenol",
+      "principal": "Resfenol",
+      "termosBusca": [
+        "Resfenol"
+      ],
+      "slug": "resfenol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Resfenol",
+        "nomeEncontrado": "RESFENOL",
+        "numeroRegistro": "106890135",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\019-resfenol-profissional.pdf",
+            "bytes": 211164
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "020",
+      "original": "Loratadina (Claritin)",
+      "principal": "Loratadina",
+      "termosBusca": [
+        "Loratadina",
+        "Claritin"
+      ],
+      "slug": "loratadina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Loratadina",
+        "nomeEncontrado": "loratadina",
+        "numeroRegistro": "103920239",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\020-loratadina-profissional.pdf",
+            "bytes": 427127
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "021",
+      "original": "Desloratadina (Desalex)",
+      "principal": "Desloratadina",
+      "termosBusca": [
+        "Desloratadina",
+        "Desalex"
+      ],
+      "slug": "desloratadina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Desloratadina",
+        "nomeEncontrado": "desloratadina",
+        "numeroRegistro": "100290227",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\021-desloratadina-profissional.pdf",
+            "bytes": 272987
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "022",
+      "original": "Fexofenadina (Allegra)",
+      "principal": "Fexofenadina",
+      "termosBusca": [
+        "Fexofenadina",
+        "Allegra"
+      ],
+      "slug": "fexofenadina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Allegra",
+        "nomeEncontrado": "ALLEGRA",
+        "numeroRegistro": "186200010",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\022-fexofenadina-profissional.pdf",
+            "bytes": 779765
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "023",
+      "original": "Cetirizina (Zyrtec)",
+      "principal": "Cetirizina",
+      "termosBusca": [
+        "Cetirizina",
+        "Zyrtec"
+      ],
+      "slug": "cetirizina",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:19:06.672Z"
+      }
+    },
+    {
+      "id": "024",
+      "original": "Dexclorfeniramina (Polaramine)",
+      "principal": "Dexclorfeniramina",
+      "termosBusca": [
+        "Dexclorfeniramina",
+        "Polaramine"
+      ],
+      "slug": "dexclorfeniramina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Polaramine",
+        "nomeEncontrado": "POLARAMINE",
+        "numeroRegistro": "178170811",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\024-dexclorfeniramina-profissional.pdf",
+            "bytes": 260602
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "025",
+      "original": "Hidroxizina (Hixizine)",
+      "principal": "Hidroxizina",
+      "termosBusca": [
+        "Hidroxizina",
+        "Hixizine"
+      ],
+      "slug": "hidroxizina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Hixizine",
+        "nomeEncontrado": "HIXIZINE",
+        "numeroRegistro": "101910256",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\025-hidroxizina-profissional.pdf",
+            "bytes": 339356
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "026",
+      "original": "Salbutamol (Aerolin)",
+      "principal": "Salbutamol",
+      "termosBusca": [
+        "Salbutamol",
+        "Aerolin"
+      ],
+      "slug": "salbutamol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Aerolin",
+        "nomeEncontrado": "AEROLIN",
+        "numeroRegistro": "101070226",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\026-salbutamol-profissional.pdf",
+            "bytes": 996370
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "027",
+      "original": "Ambroxol (Mucosolvan)",
+      "principal": "Ambroxol",
+      "termosBusca": [
+        "Ambroxol",
+        "Mucosolvan"
+      ],
+      "slug": "ambroxol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Mucosolvan",
+        "nomeEncontrado": "MUCOSOLVAN",
+        "numeroRegistro": "186200017",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\027-ambroxol-profissional.pdf",
+            "bytes": 426512
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "028",
+      "original": "Acetilcisteína (Fluimucil)",
+      "principal": "Acetilcisteína",
+      "termosBusca": [
+        "Acetilcisteína",
+        "Fluimucil"
+      ],
+      "slug": "acetilcisteina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Acetilcisteína",
+        "nomeEncontrado": "ACETILCISTEÍNA",
+        "numeroRegistro": "125680127",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\028-acetilcisteina-profissional.pdf",
+            "bytes": 505411
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "029",
+      "original": "Budesonida nasal (Budecort)",
+      "principal": "Budesonida nasal",
+      "termosBusca": [
+        "Budesonida nasal",
+        "Budecort"
+      ],
+      "slug": "budesonida-nasal",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:20:30.672Z"
+      }
+    },
+    {
+      "id": "030",
+      "original": "Sorine (soro nasal)",
+      "principal": "Sorine",
+      "termosBusca": [
+        "Sorine",
+        "soro nasal"
+      ],
+      "slug": "sorine",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Sorine",
+        "nomeEncontrado": "SORINE",
+        "numeroRegistro": "105730050",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\030-sorine-profissional.pdf",
+            "bytes": 393521
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "031",
+      "original": "Omeprazol (Losec)",
+      "principal": "Omeprazol",
+      "termosBusca": [
+        "Omeprazol",
+        "Losec"
+      ],
+      "slug": "omeprazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Omeprazol",
+        "nomeEncontrado": "omeprazol",
+        "numeroRegistro": "125680345",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\031-omeprazol-profissional.pdf",
+            "bytes": 330468
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "032",
+      "original": "Pantoprazol (Pantozol)",
+      "principal": "Pantoprazol",
+      "termosBusca": [
+        "Pantoprazol",
+        "Pantozol"
+      ],
+      "slug": "pantoprazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Pantoprazol",
+        "nomeEncontrado": "PANTOPRAZOL",
+        "numeroRegistro": "100430026",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\032-pantoprazol-profissional.pdf",
+            "bytes": 400156
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "033",
+      "original": "Esomeprazol (Nexium)",
+      "principal": "Esomeprazol",
+      "termosBusca": [
+        "Esomeprazol",
+        "Nexium"
+      ],
+      "slug": "esomeprazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Esomeprazol",
+        "nomeEncontrado": "esomeprazol magnésico",
+        "numeroRegistro": "155840688",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\033-esomeprazol-profissional.pdf",
+            "bytes": 628324
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "034",
+      "original": "Domperidona (Motilium)",
+      "principal": "Domperidona",
+      "termosBusca": [
+        "Domperidona",
+        "Motilium"
+      ],
+      "slug": "domperidona",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Domperidona",
+        "nomeEncontrado": "DOMPERIDONA",
+        "numeroRegistro": "123520192",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\034-domperidona-profissional.pdf",
+            "bytes": 426529
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "035",
+      "original": "Metoclopramida (Plasil)",
+      "principal": "Metoclopramida",
+      "termosBusca": [
+        "Metoclopramida",
+        "Plasil"
+      ],
+      "slug": "metoclopramida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Plasil",
+        "nomeEncontrado": "PLASIL",
+        "numeroRegistro": "109170151",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\035-metoclopramida-profissional.pdf",
+            "bytes": 205301
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "036",
+      "original": "Simeticona (Luftal)",
+      "principal": "Simeticona",
+      "termosBusca": [
+        "Simeticona",
+        "Luftal"
+      ],
+      "slug": "simeticona",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Simeticona",
+        "nomeEncontrado": "simeticona + metilbrometo de homatropina",
+        "numeroRegistro": "105830994",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\036-simeticona-profissional.pdf",
+            "bytes": 329901
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "037",
+      "original": "Sal de fruta Eno",
+      "principal": "Sal de fruta Eno",
+      "termosBusca": [
+        "Sal de fruta Eno"
+      ],
+      "slug": "sal-de-fruta-eno",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Sal de fruta Eno",
+        "nomeEncontrado": "SAL DE FRUTA ENO",
+        "numeroRegistro": "192900003",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\037-sal-de-fruta-eno-profissional.pdf",
+            "bytes": 254366
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "038",
+      "original": "Estomazil",
+      "principal": "Estomazil",
+      "termosBusca": [
+        "Estomazil"
+      ],
+      "slug": "estomazil",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Estomazil",
+        "nomeEncontrado": "ESTOMAZIL",
+        "numeroRegistro": "178170971",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\038-estomazil-profissional.pdf",
+            "bytes": 339724
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "039",
+      "original": "Engov",
+      "principal": "Engov",
+      "termosBusca": [
+        "Engov"
+      ],
+      "slug": "engov",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Engov",
+        "nomeEncontrado": "ENGOV",
+        "numeroRegistro": "178170093",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\039-engov-profissional.pdf",
+            "bytes": 311171
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "040",
+      "original": "Floratil",
+      "principal": "Floratil",
+      "termosBusca": [
+        "Floratil"
+      ],
+      "slug": "floratil",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Floratil",
+        "nomeEncontrado": "FLORATIL",
+        "numeroRegistro": "103900216",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\040-floratil-profissional.pdf",
+            "bytes": 434987
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "041",
+      "original": "Loperamida (Imosec)",
+      "principal": "Loperamida",
+      "termosBusca": [
+        "Loperamida",
+        "Imosec"
+      ],
+      "slug": "loperamida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Imosec",
+        "nomeEncontrado": "IMOSEC",
+        "numeroRegistro": "157211211",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\041-loperamida-profissional.pdf",
+            "bytes": 463269
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "042",
+      "original": "Dimenidrato (Dramin)",
+      "principal": "Dimenidrato",
+      "termosBusca": [
+        "Dimenidrato",
+        "Dramin"
+      ],
+      "slug": "dimenidrato",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Dramin",
+        "nomeEncontrado": "Dramin",
+        "numeroRegistro": "178170901",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\042-dimenidrato-profissional.pdf",
+            "bytes": 351567
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "043",
+      "original": "Bisacodil (Dulcolax)",
+      "principal": "Bisacodil",
+      "termosBusca": [
+        "Bisacodil",
+        "Dulcolax"
+      ],
+      "slug": "bisacodil",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Dulcolax",
+        "nomeEncontrado": "DULCOLAX",
+        "numeroRegistro": "186200020",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\043-bisacodil-profissional.pdf",
+            "bytes": 511412
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "044",
+      "original": "Lactulona",
+      "principal": "Lactulona",
+      "termosBusca": [
+        "Lactulona"
+      ],
+      "slug": "lactulona",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Lactulona",
+        "nomeEncontrado": "LACTULONA",
+        "numeroRegistro": "104540043",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\044-lactulona-profissional.pdf",
+            "bytes": 1028843
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "045",
+      "original": "Amoxicilina",
+      "principal": "Amoxicilina",
+      "termosBusca": [
+        "Amoxicilina"
+      ],
+      "slug": "amoxicilina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Amoxicilina",
+        "nomeEncontrado": "amoxicilina",
+        "numeroRegistro": "151670019",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\045-amoxicilina-profissional.pdf",
+            "bytes": 554007
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "046",
+      "original": "Amoxicilina + clavulanato (Clavulin)",
+      "principal": "Amoxicilina + clavulanato",
+      "termosBusca": [
+        "Amoxicilina + clavulanato",
+        "Clavulin"
+      ],
+      "slug": "amoxicilina-clavulanato",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Amoxicilina + clavulanato",
+        "nomeEncontrado": "AMOXICILINA + CLAVULANATO DE POTASSIO",
+        "numeroRegistro": "102350528",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\046-amoxicilina-clavulanato-profissional.pdf",
+            "bytes": 399507
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "047",
+      "original": "Azitromicina (Zitromax)",
+      "principal": "Azitromicina",
+      "termosBusca": [
+        "Azitromicina",
+        "Zitromax"
+      ],
+      "slug": "azitromicina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Azitromicina",
+        "nomeEncontrado": "AZITROMICINA",
+        "numeroRegistro": "102350522",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\047-azitromicina-profissional.pdf",
+            "bytes": 583523
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "048",
+      "original": "Cefalexina (Keflex)",
+      "principal": "Cefalexina",
+      "termosBusca": [
+        "Cefalexina",
+        "Keflex"
+      ],
+      "slug": "cefalexina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Cefalexina",
+        "nomeEncontrado": "CEFALEXINA",
+        "numeroRegistro": "102350553",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\048-cefalexina-profissional.pdf",
+            "bytes": 272406
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "049",
+      "original": "Ciprofloxacino",
+      "principal": "Ciprofloxacino",
+      "termosBusca": [
+        "Ciprofloxacino"
+      ],
+      "slug": "ciprofloxacino",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Ciprofloxacino",
+        "nomeEncontrado": "ciprofloxacino",
+        "numeroRegistro": "103110155",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\049-ciprofloxacino-profissional.pdf",
+            "bytes": 553268
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "050",
+      "original": "Sulfametoxazol + trimetoprima (Bactrim)",
+      "principal": "Sulfametoxazol + trimetoprima",
+      "termosBusca": [
+        "Sulfametoxazol + trimetoprima",
+        "Bactrim"
+      ],
+      "slug": "sulfametoxazol-trimetoprima",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Sulfametoxazol + trimetoprima",
+        "nomeEncontrado": "sulfametoxazol + trimetoprima",
+        "numeroRegistro": "144930084",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\050-sulfametoxazol-trimetoprima-profissional.pdf",
+            "bytes": 745383
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "051",
+      "original": "Metronidazol (Flagyl)",
+      "principal": "Metronidazol",
+      "termosBusca": [
+        "Metronidazol",
+        "Flagyl"
+      ],
+      "slug": "metronidazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Metronidazol",
+        "nomeEncontrado": "metronidazol",
+        "numeroRegistro": "100410158",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\051-metronidazol-profissional.pdf",
+            "bytes": 334516
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "052",
+      "original": "Doxiciclina",
+      "principal": "Doxiciclina",
+      "termosBusca": [
+        "Doxiciclina"
+      ],
+      "slug": "doxiciclina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Doxiciclina",
+        "nomeEncontrado": "doxiciclina",
+        "numeroRegistro": "100470330",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\052-doxiciclina-profissional.pdf",
+            "bytes": 425356
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "053",
+      "original": "Nitrofurantoína (Macrodantina)",
+      "principal": "Nitrofurantoína",
+      "termosBusca": [
+        "Nitrofurantoína",
+        "Macrodantina"
+      ],
+      "slug": "nitrofurantoina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Macrodantina",
+        "nomeEncontrado": "MACRODANTINA",
+        "numeroRegistro": "178170787",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\053-nitrofurantoina-profissional.pdf",
+            "bytes": 323710
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "054",
+      "original": "Claritromicina",
+      "principal": "Claritromicina",
+      "termosBusca": [
+        "Claritromicina"
+      ],
+      "slug": "claritromicina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Claritromicina",
+        "nomeEncontrado": "CLARITROMICINA",
+        "numeroRegistro": "174650016",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\054-claritromicina-profissional.pdf",
+            "bytes": 658276
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "055",
+      "original": "Fluconazol (Zoltec)",
+      "principal": "Fluconazol",
+      "termosBusca": [
+        "Fluconazol",
+        "Zoltec"
+      ],
+      "slug": "fluconazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Fluconazol",
+        "nomeEncontrado": "fluconazol",
+        "numeroRegistro": "105710189",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\055-fluconazol-profissional.pdf",
+            "bytes": 435502
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "056",
+      "original": "Albendazol (Zentel)",
+      "principal": "Albendazol",
+      "termosBusca": [
+        "Albendazol",
+        "Zentel"
+      ],
+      "slug": "albendazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Albendazol",
+        "nomeEncontrado": "albendazol",
+        "numeroRegistro": "102350662",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\056-albendazol-profissional.pdf",
+            "bytes": 253140
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "057",
+      "original": "Ivermectina (Revectina)",
+      "principal": "Ivermectina",
+      "termosBusca": [
+        "Ivermectina",
+        "Revectina"
+      ],
+      "slug": "ivermectina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Ivermectina",
+        "nomeEncontrado": "ivermectina",
+        "numeroRegistro": "167730661",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\057-ivermectina-profissional.pdf",
+            "bytes": 238082
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "058",
+      "original": "Nitazoxanida (Annita)",
+      "principal": "Nitazoxanida",
+      "termosBusca": [
+        "Nitazoxanida",
+        "Annita"
+      ],
+      "slug": "nitazoxanida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Nitazoxanida",
+        "nomeEncontrado": "nitazoxanida",
+        "numeroRegistro": "100431495",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\058-nitazoxanida-profissional.pdf",
+            "bytes": 221326
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "059",
+      "original": "Cetoconazol",
+      "principal": "Cetoconazol",
+      "termosBusca": [
+        "Cetoconazol"
+      ],
+      "slug": "cetoconazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Cetoconazol",
+        "nomeEncontrado": "cetoconazol",
+        "numeroRegistro": "125680192",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\059-cetoconazol-profissional.pdf",
+            "bytes": 403763
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "060",
+      "original": "Clotrimazol (Canesten)",
+      "principal": "Clotrimazol",
+      "termosBusca": [
+        "Clotrimazol",
+        "Canesten"
+      ],
+      "slug": "clotrimazol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Clotrimazol",
+        "nomeEncontrado": "clotrimazol",
+        "numeroRegistro": "125680104",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\060-clotrimazol-profissional.pdf",
+            "bytes": 77019
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "061",
+      "original": "Losartana",
+      "principal": "Losartana",
+      "termosBusca": [
+        "Losartana"
+      ],
+      "slug": "losartana",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Losartana",
+        "nomeEncontrado": "losartana potássica + hidroclorotiazida",
+        "numeroRegistro": "102350721",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\061-losartana-profissional.pdf",
+            "bytes": 399955
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "062",
+      "original": "Atenolol",
+      "principal": "Atenolol",
+      "termosBusca": [
+        "Atenolol"
+      ],
+      "slug": "atenolol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Atenolol",
+        "nomeEncontrado": "atenolol",
+        "numeroRegistro": "103920250",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\062-atenolol-profissional.pdf",
+            "bytes": 324994
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "063",
+      "original": "Anlodipino",
+      "principal": "Anlodipino",
+      "termosBusca": [
+        "Anlodipino"
+      ],
+      "slug": "anlodipino",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:27:27.976Z"
+      }
+    },
+    {
+      "id": "064",
+      "original": "Enalapril",
+      "principal": "Enalapril",
+      "termosBusca": [
+        "Enalapril"
+      ],
+      "slug": "enalapril",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:27:35.017Z"
+      }
+    },
+    {
+      "id": "065",
+      "original": "Captopril",
+      "principal": "Captopril",
+      "termosBusca": [
+        "Captopril"
+      ],
+      "slug": "captopril",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Captopril",
+        "nomeEncontrado": "CAPTOPRIL",
+        "numeroRegistro": "103920161",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\065-captopril-profissional.pdf",
+            "bytes": 341472
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "066",
+      "original": "Hidroclorotiazida",
+      "principal": "Hidroclorotiazida",
+      "termosBusca": [
+        "Hidroclorotiazida"
+      ],
+      "slug": "hidroclorotiazida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Hidroclorotiazida",
+        "nomeEncontrado": "hidroclorotiazida",
+        "numeroRegistro": "105830835",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\066-hidroclorotiazida-profissional.pdf",
+            "bytes": 156203
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "067",
+      "original": "Metoprolol (Seloken)",
+      "principal": "Metoprolol",
+      "termosBusca": [
+        "Metoprolol",
+        "Seloken"
+      ],
+      "slug": "metoprolol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Seloken",
+        "nomeEncontrado": "SELOKEN",
+        "numeroRegistro": "116180071",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\067-metoprolol-profissional.pdf",
+            "bytes": 397665
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "068",
+      "original": "Carvedilol",
+      "principal": "Carvedilol",
+      "termosBusca": [
+        "Carvedilol"
+      ],
+      "slug": "carvedilol",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Carvedilol",
+        "nomeEncontrado": "CARVEDILOL",
+        "numeroRegistro": "105730594",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\068-carvedilol-profissional.pdf",
+            "bytes": 404777
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "069",
+      "original": "Sinvastatina",
+      "principal": "Sinvastatina",
+      "termosBusca": [
+        "Sinvastatina"
+      ],
+      "slug": "sinvastatina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Sinvastatina",
+        "nomeEncontrado": "SINVASTATINA",
+        "numeroRegistro": "123520048",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\069-sinvastatina-profissional.pdf",
+            "bytes": 489863
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "070",
+      "original": "Atorvastatina",
+      "principal": "Atorvastatina",
+      "termosBusca": [
+        "Atorvastatina"
+      ],
+      "slug": "atorvastatina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Atorvastatina",
+        "nomeEncontrado": "atorvastatina cálcica",
+        "numeroRegistro": "167730487",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\070-atorvastatina-profissional.pdf",
+            "bytes": 371099
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "071",
+      "original": "Rosuvastatina",
+      "principal": "Rosuvastatina",
+      "termosBusca": [
+        "Rosuvastatina"
+      ],
+      "slug": "rosuvastatina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Rosuvastatina",
+        "nomeEncontrado": "rosuvastatina cálcica",
+        "numeroRegistro": "167730463",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\071-rosuvastatina-profissional.pdf",
+            "bytes": 353205
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "072",
+      "original": "Furosemida (Lasix)",
+      "principal": "Furosemida",
+      "termosBusca": [
+        "Furosemida",
+        "Lasix"
+      ],
+      "slug": "furosemida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Furosemida",
+        "nomeEncontrado": "FUROSEMIDA",
+        "numeroRegistro": "103700277",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\072-furosemida-profissional.pdf",
+            "bytes": 119705
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "073",
+      "original": "Espironolactona (Aldactone)",
+      "principal": "Espironolactona",
+      "termosBusca": [
+        "Espironolactona",
+        "Aldactone"
+      ],
+      "slug": "espironolactona",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Espironolactona",
+        "nomeEncontrado": "espironolactona",
+        "numeroRegistro": "105831064",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\073-espironolactona-profissional.pdf",
+            "bytes": 225353
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "074",
+      "original": "Clopidogrel (Plavix)",
+      "principal": "Clopidogrel",
+      "termosBusca": [
+        "Clopidogrel",
+        "Plavix"
+      ],
+      "slug": "clopidogrel",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Plavix",
+        "nomeEncontrado": "PLAVIX",
+        "numeroRegistro": "183260370",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\074-clopidogrel-profissional.pdf",
+            "bytes": 428975
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "075",
+      "original": "Metformina (Glifage)",
+      "principal": "Metformina",
+      "termosBusca": [
+        "Metformina",
+        "Glifage"
+      ],
+      "slug": "metformina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Glifage",
+        "nomeEncontrado": "GLIFAGE",
+        "numeroRegistro": "100890193",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\075-metformina-profissional.pdf",
+            "bytes": 460050
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "076",
+      "original": "Glibenclamida",
+      "principal": "Glibenclamida",
+      "termosBusca": [
+        "Glibenclamida"
+      ],
+      "slug": "glibenclamida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Glibenclamida",
+        "nomeEncontrado": "Glibenclamida",
+        "numeroRegistro": "102350661",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\076-glibenclamida-profissional.pdf",
+            "bytes": 237715
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "077",
+      "original": "Gliclazida (Diamicron)",
+      "principal": "Gliclazida",
+      "termosBusca": [
+        "Gliclazida",
+        "Diamicron"
+      ],
+      "slug": "gliclazida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Gliclazida",
+        "nomeEncontrado": "gliclazida",
+        "numeroRegistro": "167730590",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\077-gliclazida-profissional.pdf",
+            "bytes": 350030
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "078",
+      "original": "Levotiroxina (Puran T4)",
+      "principal": "Levotiroxina",
+      "termosBusca": [
+        "Levotiroxina",
+        "Puran T4"
+      ],
+      "slug": "levotiroxina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Levotiroxina",
+        "nomeEncontrado": "levotiroxina sódica",
+        "numeroRegistro": "100890416",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\078-levotiroxina-profissional.pdf",
+            "bytes": 374113
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "079",
+      "original": "Insulina (NPH/regular)",
+      "principal": "Insulina",
+      "termosBusca": [
+        "Insulina",
+        "NPH",
+        "regular"
+      ],
+      "slug": "insulina",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:30:13.906Z"
+      }
+    },
+    {
+      "id": "080",
+      "original": "Semaglutida (Ozempic)",
+      "principal": "Semaglutida",
+      "termosBusca": [
+        "Semaglutida",
+        "Ozempic"
+      ],
+      "slug": "semaglutida",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Ozempic",
+        "nomeEncontrado": "Ozempic",
+        "numeroRegistro": "117660036",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\080-semaglutida-profissional.pdf",
+            "bytes": 2108921
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "081",
+      "original": "Clonazepam (Rivotril)",
+      "principal": "Clonazepam",
+      "termosBusca": [
+        "Clonazepam",
+        "Rivotril"
+      ],
+      "slug": "clonazepam",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Clonazepam",
+        "nomeEncontrado": "clonazepam",
+        "numeroRegistro": "102350752",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\081-clonazepam-profissional.pdf",
+            "bytes": 321180
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "082",
+      "original": "Alprazolam (Frontal)",
+      "principal": "Alprazolam",
+      "termosBusca": [
+        "Alprazolam",
+        "Frontal"
+      ],
+      "slug": "alprazolam",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Alprazolam",
+        "nomeEncontrado": "ALPRAZOLAM",
+        "numeroRegistro": "102350663",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\082-alprazolam-profissional.pdf",
+            "bytes": 299868
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "083",
+      "original": "Sertralina (Zoloft)",
+      "principal": "Sertralina",
+      "termosBusca": [
+        "Sertralina",
+        "Zoloft"
+      ],
+      "slug": "sertralina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Zoloft",
+        "nomeEncontrado": "ZOLOFT",
+        "numeroRegistro": "188300078",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\083-sertralina-profissional.pdf",
+            "bytes": 829981
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "084",
+      "original": "Fluoxetina (Prozac)",
+      "principal": "Fluoxetina",
+      "termosBusca": [
+        "Fluoxetina",
+        "Prozac"
+      ],
+      "slug": "fluoxetina",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:31:08.148Z"
+      }
+    },
+    {
+      "id": "085",
+      "original": "Escitalopram (Lexapro)",
+      "principal": "Escitalopram",
+      "termosBusca": [
+        "Escitalopram",
+        "Lexapro"
+      ],
+      "slug": "escitalopram",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Lexapro",
+        "nomeEncontrado": "LEXAPRO",
+        "numeroRegistro": "104750044",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\085-escitalopram-profissional.pdf",
+            "bytes": 794504
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "086",
+      "original": "Amitriptilina (Tryptanol)",
+      "principal": "Amitriptilina",
+      "termosBusca": [
+        "Amitriptilina",
+        "Tryptanol"
+      ],
+      "slug": "amitriptilina",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:31:30.766Z"
+      }
+    },
+    {
+      "id": "087",
+      "original": "Zolpidem (Stilnox)",
+      "principal": "Zolpidem",
+      "termosBusca": [
+        "Zolpidem",
+        "Stilnox"
+      ],
+      "slug": "zolpidem",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Stilnox",
+        "nomeEncontrado": "STILNOX",
+        "numeroRegistro": "183260352",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\087-zolpidem-profissional.pdf",
+            "bytes": 1220870
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "088",
+      "original": "Metilfenidato (Ritalina)",
+      "principal": "Metilfenidato",
+      "termosBusca": [
+        "Metilfenidato",
+        "Ritalina"
+      ],
+      "slug": "metilfenidato",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Ritalina",
+        "nomeEncontrado": "RITALINA",
+        "numeroRegistro": "100680080",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\088-metilfenidato-profissional.pdf",
+            "bytes": 729682
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "089",
+      "original": "Lisdexanfetamina (Venvanse)",
+      "principal": "Lisdexanfetamina",
+      "termosBusca": [
+        "Lisdexanfetamina",
+        "Venvanse"
+      ],
+      "slug": "lisdexanfetamina",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Venvanse",
+        "nomeEncontrado": "VENVANSE",
+        "numeroRegistro": "106390304",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\089-lisdexanfetamina-profissional.pdf",
+            "bytes": 331915
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "090",
+      "original": "Melatonina",
+      "principal": "Melatonina",
+      "termosBusca": [
+        "Melatonina"
+      ],
+      "slug": "melatonina",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:33:24.464Z"
+      }
+    },
+    {
+      "id": "091",
+      "original": "Anticoncepcionais orais (Yasmin, Diane 35)",
+      "principal": "Anticoncepcionais orais",
+      "termosBusca": [
+        "Anticoncepcionais orais",
+        "Yasmin",
+        "Diane 35"
+      ],
+      "slug": "anticoncepcionais-orais",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Yasmin",
+        "nomeEncontrado": "YASMIN",
+        "numeroRegistro": "170560070",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\091-anticoncepcionais-orais-profissional.pdf",
+            "bytes": 301314
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "092",
+      "original": "Levonorgestrel (Postinor-2)",
+      "principal": "Levonorgestrel",
+      "termosBusca": [
+        "Levonorgestrel",
+        "Postinor-2"
+      ],
+      "slug": "levonorgestrel",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "ANVISA HTTP 499: <!DOCTYPE html>\r\n<html dir=\"ltr\" lang=\"pt\" data-theme=\"&UiTheme&\">\r\n\t<head>\r\n\t\t<title>Kaspersky Premium</title>\r\n\t\t<meta charset=\"UTF-8\" />\r\n\t\t<meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\"/>\r\n\t\t<meta http-equiv=\"Pragma\" content=\"no-cache\" />\r\n\t\t<meta http-equiv=\"Cache-Control\" content=\"no-cac",
+        "statusHttp": 499,
+        "data": "2026-10-17T13:33:45.414Z"
+      }
+    },
+    {
+      "id": "093",
+      "original": "Sildenafila (Viagra)",
+      "principal": "Sildenafila",
+      "termosBusca": [
+        "Sildenafila",
+        "Viagra"
+      ],
+      "slug": "sildenafila",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Viagra",
+        "nomeEncontrado": "VIAGRA",
+        "numeroRegistro": "188300077",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\093-sildenafila-profissional.pdf",
+            "bytes": 533343
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "094",
+      "original": "Tadalafila (Cialis)",
+      "principal": "Tadalafila",
+      "termosBusca": [
+        "Tadalafila",
+        "Cialis"
+      ],
+      "slug": "tadalafila",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Tadalafila",
+        "nomeEncontrado": "tadalafila",
+        "numeroRegistro": "154230240",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\094-tadalafila-profissional.pdf",
+            "bytes": 1083662
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "095",
+      "original": "Vitamina D (Addera D3)",
+      "principal": "Vitamina D",
+      "termosBusca": [
+        "Vitamina D",
+        "Addera D3"
+      ],
+      "slug": "vitamina-d",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Vitamina D",
+        "nomeEncontrado": "VITAMINA D",
+        "numeroRegistro": "114620001",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\095-vitamina-d-profissional.pdf",
+            "bytes": 228014
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "096",
+      "original": "Vitamina C (Cebion, Redoxon)",
+      "principal": "Vitamina C",
+      "termosBusca": [
+        "Vitamina C",
+        "Cebion",
+        "Redoxon"
+      ],
+      "slug": "vitamina-c",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Vitamina C",
+        "nomeEncontrado": "VITAMINA C INJETÁVEL",
+        "numeroRegistro": "110850028",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\096-vitamina-c-profissional.pdf",
+            "bytes": 187985
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "097",
+      "original": "Complexo B (Citoneurin)",
+      "principal": "Complexo B",
+      "termosBusca": [
+        "Complexo B",
+        "Citoneurin"
+      ],
+      "slug": "complexo-b",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Complexo B",
+        "nomeEncontrado": "COMPLEXO B",
+        "numeroRegistro": "102351340",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\097-complexo-b-profissional.pdf",
+            "bytes": 192809
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "098",
+      "original": "Sulfato ferroso (Noripurum)",
+      "principal": "Sulfato ferroso",
+      "termosBusca": [
+        "Sulfato ferroso",
+        "Noripurum"
+      ],
+      "slug": "sulfato-ferroso",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Noripurum",
+        "nomeEncontrado": "NORIPURUM",
+        "numeroRegistro": "115240013",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\098-sulfato-ferroso-profissional.pdf",
+            "bytes": 756477
+          }
+        }
+      },
+      "erro": null
+    },
+    {
+      "id": "099",
+      "original": "Hipoglós",
+      "principal": "Hipoglós",
+      "termosBusca": [
+        "Hipoglós"
+      ],
+      "slug": "hipoglos",
+      "status": "falhou",
+      "tentativas": 1,
+      "resultado": null,
+      "erro": {
+        "mensagem": "Nenhum resultado com a bula solicitada foi encontrado.",
+        "statusHttp": null,
+        "data": "2026-10-17T13:34:59.844Z"
+      }
+    },
+    {
+      "id": "100",
+      "original": "Nebacetin",
+      "principal": "Nebacetin",
+      "termosBusca": [
+        "Nebacetin"
+      ],
+      "slug": "nebacetin",
+      "status": "concluido",
+      "tentativas": 1,
+      "resultado": {
+        "termoUsado": "Nebacetin",
+        "nomeEncontrado": "NEBACETIN",
+        "numeroRegistro": "178170904",
+        "arquivos": {
+          "profissional": {
+            "caminho": "C:\\Users\\caioj\\OneDrive\\Área de Trabalho\\IA\\Farmaceutic_AI\\bulas_pdf\\100-nebacetin-profissional.pdf",
+            "bytes": 290416
+          }
+        }
+      },
+      "erro": null
+    }
+  ]
+}

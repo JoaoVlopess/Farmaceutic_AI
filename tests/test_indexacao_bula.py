@@ -43,6 +43,30 @@ class IndexacaoBulaTest(unittest.TestCase):
         self.assertIn("COMPOSIÇÃO", chunks[0].page_content)
         self.assertTrue(all(chunk.id for chunk in chunks))
 
+    def test_secoes_repetidas_recebem_ids_unicos(self):
+        documento = Document(
+            page_content=(
+                "1. INDICAÇÕES\nPrimeira versão.\n\n"
+                "1. INDICAÇÕES\nSegunda versão."
+            ),
+            metadata={
+                "source": "bula.pdf",
+                "bula_index": 1,
+                "medicamento": "REMÉDIO X",
+                "medicamento_normalizado": "remedio x",
+                "forma_farmaceutica": "comprimido",
+            },
+        )
+
+        chunks = dividir_bula(documento)
+
+        self.assertEqual(len(chunks), 2)
+        self.assertEqual(len({chunk.id for chunk in chunks}), 2)
+        self.assertEqual(
+            [chunk.metadata["chunk_id"] for chunk in chunks],
+            ["1.1.1.1", "1.1.2.1"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

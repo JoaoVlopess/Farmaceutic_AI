@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from langchain.agents import create_agent
+from langchain_core.documents import Document
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from RAG import buscar_bula
@@ -26,7 +27,10 @@ agente_maestro = create_agent(
     response_format=ProviderStrategy(RespostaFarmaceutic),
 )
 
-def gerar_informacao(solicitacao: SolicitacaoInformacao) -> RespostaFarmaceutic:
+def gerar_informacao(
+    solicitacao: SolicitacaoInformacao,
+) -> tuple[RespostaFarmaceutic, list[Document]]:
+    """Gera a resposta e devolve também os chunks usados como contexto."""
     mensagem_usuario = f"""
     Medicamento: {solicitacao.medicamento}
     Forma Farmaceutica: {solicitacao.forma_farmaceutica}
@@ -41,12 +45,13 @@ def gerar_informacao(solicitacao: SolicitacaoInformacao) -> RespostaFarmaceutic:
     )
 
     if not vetorial_content:
-        return RespostaFarmaceutic(
+        resposta = RespostaFarmaceutic(
             explicacao=(
                 "Não encontrei conteúdo indexado para o medicamento e a "
                 "forma farmacêutica informados."
-            )
+            ),
         )
+        return resposta, []
 
     mensagem_usuario += "\n\nContexto recuperado da Bula:\n"
     for i, documento in enumerate(vetorial_content, start=1):
@@ -63,4 +68,4 @@ def gerar_informacao(solicitacao: SolicitacaoInformacao) -> RespostaFarmaceutic:
         }
     )
 
-    return resultado["structured_response"]
+    return resultado["structured_response"], vetorial_content

@@ -1,0 +1,116 @@
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="IA Bulária - início" (click)="$event.preventDefault(); trocarMedicamento()">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M16 4v24M4 16h24" /></svg>
+      </span>
+      <span><strong>FARMACEUTIC AI</strong><small>Consulta assistida de bulas</small></span>
+    </a>
+    <div class="professional-badge"><span class="status-dot"></span>Ambiente profissional</div>
+  </header>
+
+  <main [class.chat-layout]="etapa() === 'chat'">
+    @if (etapa() === 'selecao') {
+      <section class="selection" aria-labelledby="selection-title">
+        <div class="selection__intro">
+          <span class="eyebrow">Consulta de bula profissional</span>
+          <h1 id="selection-title">Qual medicamento você deseja consultar?</h1>
+          <p>Selecione um medicamento indexado para iniciar uma conversa baseada exclusivamente em sua bula.</p>
+        </div>
+
+        <div class="selection-card">
+          <div class="step-label"><span>1</span> Identifique o medicamento</div>
+          <label for="medicamento">Nome comercial ou princípio ativo</label>
+          <div class="search-field" [class.search-field--active]="listaAberta()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+            <input id="medicamento" type="search" autocomplete="off" placeholder="Ex.: paracetamol, Dorflex..."
+              [ngModel]="termoBusca()" (ngModelChange)="atualizarBusca($event)" (focus)="listaAberta.set(true)"
+              (keydown.escape)="listaAberta.set(false)" />
+          </div>
+
+          @if (listaAberta() && termoBusca().length >= 2) {
+            <div class="suggestions" role="listbox" aria-label="Medicamentos encontrados">
+              @for (medicamento of medicamentosFiltrados(); track medicamento.nome) {
+                <button type="button" role="option" (click)="selecionarMedicamento(medicamento)">
+                  <span class="medicine-icon" aria-hidden="true"></span>
+                  <span><strong>{{ medicamento.nome }}</strong><small>{{ medicamento.principioAtivo }}</small></span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              } @empty {
+                <div class="empty-result">Nenhum medicamento indexado encontrado.</div>
+              }
+            </div>
+          }
+
+          @if (medicamentoSelecionado(); as medicamento) {
+            <div class="selected-medicine">
+              <span class="selected-medicine__check" aria-hidden="true">✓</span>
+              <span><small>Medicamento selecionado</small><strong>{{ medicamento.nome }}</strong><span>{{ medicamento.principioAtivo }}</span></span>
+            </div>
+            <label for="forma">Forma farmacêutica</label>
+            <div class="select-wrapper">
+              <select id="forma" [ngModel]="formaSelecionada()" (ngModelChange)="formaSelecionada.set($event)">
+                <option value="" disabled>Selecione uma opção</option>
+                @for (forma of medicamento.formas; track forma) { <option [value]="forma">{{ forma }}</option> }
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+            </div>
+          }
+
+          <button class="primary-button" type="button" [disabled]="!medicamentoSelecionado() || !formaSelecionada()" (click)="confirmarMedicamento()">
+            Iniciar consulta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+          <p class="privacy-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
+            Consulte sempre a bula e use seu julgamento clínico profissional.
+          </p>
+        </div>
+      </section>
+    } @else {
+      <section class="chat" aria-labelledby="chat-title">
+        <aside class="chat-context">
+          <span class="eyebrow">Consulta ativa</span>
+          <h2 id="chat-title">{{ medicamentoSelecionado()?.nome }}</h2>
+          <p>{{ medicamentoSelecionado()?.principioAtivo }}</p>
+          <div class="context-row"><span>Forma</span><strong>{{ formaSelecionada() }}</strong></div>
+          <div class="context-row"><span>Fonte</span><strong>Bula profissional</strong></div>
+          <button type="button" class="secondary-button" (click)="trocarMedicamento()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M9 18l-6-6 6-6" /></svg>Trocar medicamento
+          </button>
+        </aside>
+
+        <div class="conversation">
+          <header class="conversation__header">
+            <div><span class="assistant-avatar" aria-hidden="true">B</span><span><strong>IA Bulária</strong><small><span class="status-dot"></span> Pronta para consultar</small></span></div>
+            <span class="source-chip">Baseada na bula</span>
+          </header>
+
+          <div class="messages" aria-live="polite">
+            @for (mensagem of mensagens(); track $index) {
+              <article class="message" [class.message--user]="mensagem.autor === 'usuario'">
+                @if (mensagem.autor === 'assistente') { <span class="message__avatar" aria-hidden="true">B</span> }
+                <div><small>{{ mensagem.autor === 'assistente' ? 'IA Bulária' : 'Você' }}</small><p>{{ mensagem.texto }}</p></div>
+              </article>
+            }
+            @if (mensagens().length === 1) {
+              <div class="prompt-suggestions">
+                @for (sugestao of sugestoes; track sugestao) { <button type="button" (click)="usarSugestao(sugestao)">{{ sugestao }}</button> }
+              </div>
+            }
+            @if (respondendo()) { <div class="typing" aria-label="IA Bulária está respondendo"><i></i><i></i><i></i></div> }
+          </div>
+
+          <form class="composer" (submit)="$event.preventDefault(); enviarMensagem()">
+            <textarea rows="1" aria-label="Digite sua pergunta" placeholder="Pergunte sobre indicação, posologia, contraindicações..."
+              [ngModel]="mensagemAtual()" (ngModelChange)="mensagemAtual.set($event)" name="mensagem"
+              (keydown.enter)="$event.preventDefault(); enviarMensagem()"></textarea>
+            <button type="submit" aria-label="Enviar pergunta" [disabled]="!mensagemAtual().trim() || respondendo()">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+            </button>
+          </form>
+          <p class="chat-disclaimer">As respostas apoiam a consulta profissional e não substituem avaliação clínica.</p>
+        </div>
+      </section>
+    }
+  </main>
+</div>

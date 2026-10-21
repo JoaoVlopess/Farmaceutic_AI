@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
-import time
 import re
+import shutil
+import time
 from dataclasses import dataclass
+from hashlib import sha256
 from pathlib import Path
 
 from RAG.indexar_documento import ResultadoIndexacao, indexar_pdf
@@ -23,26 +25,54 @@ class _Falha:
     tentar_apos: float
 
 
-def apagar_pdf_confirmado(caminho_pdf: Path, pasta_monitorada: Path) -> None:
-    """Apaga somente um PDF contido na pasta explicitamente monitorada."""
+def _hash_arquivo(caminho: Path) -> str:
+    digest = sha256()
+    with caminho.open("rb") as arquivo:
+        for bloco in iter(lambda: arquivo.read(1024 * 1024), b""):
+            digest.update(bloco)
+    return digest.hexdigest()
+
+
+def arquivar_pdf_confirmado(
+    caminho_pdf: Path,
+    pasta_monitorada: Path,
+    pasta_arquivo: Path | None = None,
+) -> Path:
+    """Move um PDF confirmado para o arquivo auditável, fora da entrada."""
     pasta_resolvida = pasta_monitorada.resolve()
     arquivo_resolvido = caminho_pdf.resolve()
 
     if arquivo_resolvido.suffix.casefold() != ".pdf":
-        raise ValueError("A remoção automática aceita somente arquivos PDF.")
+        raise ValueError("O arquivamento automático aceita somente arquivos PDF.")
     if not arquivo_resolvido.is_relative_to(pasta_resolvida):
-        raise ValueError("O arquivo está fora da pasta monitorada e não será apagado.")
+        raise ValueError("O arquivo está fora da pasta monitorada e não será movido.")
 
-    arquivo_resolvido.unlink(missing_ok=True)
+    digest = _hash_arquivo(arquivo_resolvido)
+    destino_base = (
+        pasta_arquivo.resolve()
+        if pasta_arquivo
+        else (pasta_resolvida.parent / "bulas_processadas").resolve()
+    )
+    destino_base.mkdir(parents=True, exist_ok=True)
+    destino = destino_base / f"{arquivo_resolvido.stem}-{digest[:12]}.pdf"
+
+    if destino.exists():
+        if _hash_arquivo(destino) != digest:
+            raise FileExistsError(f"Já existe outro arquivo no destino: {destino}")
+        arquivo_resolvido.unlink()
+    else:
+        shutil.move(str(arquivo_resolvido), str(destino))
+    return destino
 
 
-def processar_e_apagar_pdf(
+def processar_e_arquivar_pdf(
     caminho_pdf: Path,
     pasta_monitorada: Path,
+    pasta_arquivo: Path | None = None,
 ) -> ResultadoIndexacao:
-    """Indexa, confirma no Chroma e então remove o PDF original."""
+    """Indexa, confirma no Chroma e só então arquiva o PDF original."""
     resultado = indexar_pdf(caminho_pdf)
-    apagar_pdf_confirmado(caminho_pdf, pasta_monitorada)
+    arquivar_pdf_confirmado(caminho_pdf, pasta_monitorada, pasta_arquivo)
     return resultado
 
 
@@ -56,8 +86,10 @@ class MonitorDeBulas:
         verificacoes_estabilidade: int = 2,
         espera_erro_segundos: float = 30.0,
         espera_erro_maxima_segundos: float = 15 * 60.0,
+        pasta_arquivo: str | Path = "bulas_processadas",
     ) -> None:
         self.pasta = Path(pasta)
+        self.pasta_arquivo = Path(pasta_arquivo)
         self.intervalo_segundos = intervalo_segundos
         self.verificacoes_estabilidade = max(2, verificacoes_estabilidade)
         self.espera_erro_segundos = espera_erro_segundos
@@ -105,11 +137,7 @@ class MonitorDeBulas:
                 tamanho=estado.st_size,
                 modificado_ns=estado.st_mtime_ns,
             )
-
-        return (
-            self._observacoes[caminho].repeticoes
-            >= self.verificacoes_estabilidade
-        )
+        return self._observacoes[caminho].repeticoes >= self.verificacoes_estabilidade
 
     def executar_ciclo(self) -> ResultadoIndexacao | None:
         """Processa sequencialmente o primeiro PDF estável e elegível."""
@@ -133,7 +161,11 @@ class MonitorDeBulas:
 
             print(f"[INGESTÃO] Processando {caminho.name}...")
             try:
-                resultado = processar_e_apagar_pdf(caminho, self.pasta)
+                resultado = processar_e_arquivar_pdf(
+                    caminho,
+                    self.pasta,
+                    self.pasta_arquivo,
+                )
             except Exception as erro:
                 tentativas = (falha.tentativas if falha else 0) + 1
                 espera_exponencial = min(
@@ -159,19 +191,18 @@ class MonitorDeBulas:
             self._falhas.pop(caminho, None)
             print(
                 f"[OK] {caminho.name}: {resultado.quantidade_bulas} bula(s), "
-                f"{resultado.quantidade_chunks} chunks confirmados. "
-                "PDF removido."
+                f"{resultado.quantidade_chunks} chunks confirmados. PDF arquivado."
             )
             return resultado
-
         return None
 
     def executar(self) -> None:
         """Mantém o monitor ativo até o usuário pressionar Ctrl+C."""
         self.pasta.mkdir(parents=True, exist_ok=True)
+        self.pasta_arquivo.mkdir(parents=True, exist_ok=True)
         print(f"Monitorando PDFs em: {self.pasta.resolve()}")
+        print(f"Arquivo permanente em: {self.pasta_arquivo.resolve()}")
         print("Processamento sequencial ativo. Pressione Ctrl+C para encerrar.")
-
         try:
             while True:
                 self.executar_ciclo()

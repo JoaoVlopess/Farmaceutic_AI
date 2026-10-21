@@ -114,11 +114,18 @@ def filtrar_paginas_bula(paginas: Iterable[str]) -> list[str]:
     mais de uma bula, a leitura recomeça na próxima página que apresente os
     marcadores usuais de conteúdo.
     """
-    paginas_limpas: list[str] = []
+    return [texto for _, texto in filtrar_paginas_bula_numeradas(paginas)]
+
+
+def filtrar_paginas_bula_numeradas(
+    paginas: Iterable[str],
+) -> list[tuple[int, str]]:
+    """Limpa as páginas preservando o número físico original do PDF."""
+    paginas_limpas: list[tuple[int, str]] = []
     dentro_do_historico = False
     dentro_dos_dizeres_legais = False
 
-    for pagina in paginas:
+    for numero_pagina, pagina in enumerate(paginas, start=1):
         if eh_inicio_historico_bula(pagina):
             dentro_do_historico = True
             dentro_dos_dizeres_legais = False
@@ -136,7 +143,7 @@ def filtrar_paginas_bula(paginas: Iterable[str]) -> list[str]:
 
         pagina_limpa = limpar_pagina_bula(pagina)
         if pagina_limpa:
-            paginas_limpas.append(pagina_limpa)
+            paginas_limpas.append((numero_pagina, pagina_limpa))
         if _inicio_dizeres_legais(pagina) is not None:
             dentro_dos_dizeres_legais = True
 

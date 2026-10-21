@@ -11,11 +11,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from RAG.banco_vetorial import obter_banco_vetorial
 from tools import extrair_paginas_pdf
 from utils import (
+    construir_metadados_bula,
     eh_inicio_conteudo_bula,
-    filtrar_paginas_bula,
-    identificar_forma_farmaceutica,
-    identificar_nome_medicamento,
-    normalizar_nome_medicamento,
+    filtrar_paginas_bula_numeradas,
 )
 
 
@@ -57,19 +55,19 @@ def criar_documentos(caminho_arquivo: str | Path) -> list[Document]:
     caminho = Path(caminho_arquivo)
     arquivo_id = _sha256_arquivo(caminho)
     fonte = caminho.as_posix()
-    paginas = filtrar_paginas_bula(extrair_paginas_pdf(caminho))
-    grupos_de_paginas: list[list[str]] = []
-    grupo_atual: list[str] = []
+    paginas = filtrar_paginas_bula_numeradas(extrair_paginas_pdf(caminho))
+    grupos_de_paginas: list[list[tuple[int, str]]] = []
+    grupo_atual: list[tuple[int, str]] = []
     grupo_ja_tem_inicio = False
 
-    for pagina in paginas:
+    for numero_pagina, pagina in paginas:
         pagina_inicia_bula = eh_inicio_conteudo_bula(pagina)
 
         if pagina_inicia_bula and grupo_ja_tem_inicio:
             grupos_de_paginas.append(grupo_atual)
             grupo_atual = []
 
-        grupo_atual.append(pagina)
+        grupo_atual.append((numero_pagina, pagina))
         if pagina_inicia_bula:
             grupo_ja_tem_inicio = True
 
@@ -78,20 +76,25 @@ def criar_documentos(caminho_arquivo: str | Path) -> list[Document]:
 
     documentos: list[Document] = []
     for indice, paginas_da_bula in enumerate(grupos_de_paginas, start=1):
-        texto = "\n\n".join(paginas_da_bula)
-        medicamento = identificar_nome_medicamento(texto)
-        forma_farmaceutica = identificar_forma_farmaceutica(texto)
+        texto_limpo = "\n\n".join(texto for _, texto in paginas_da_bula)
+        texto_marcado = "\n\n".join(
+            f"<<<PAGINA_PDF:{numero}>>>\n{texto}"
+            for numero, texto in paginas_da_bula
+        )
+        metadados = construir_metadados_bula(
+            texto_limpo,
+            caminho,
+            arquivo_id,
+            indice,
+        )
         documentos.append(
             Document(
-                page_content=texto,
+                page_content=texto_marcado,
                 metadata={
+                    **metadados,
                     "source": fonte,
-                    "arquivo_id": arquivo_id,
-                    "arquivo_nome": caminho.name,
-                    "bula_index": indice,
-                    "medicamento": medicamento,
-                    "medicamento_normalizado": normalizar_nome_medicamento(medicamento),
-                    "forma_farmaceutica": forma_farmaceutica,
+                    "pagina_inicial": paginas_da_bula[0][0],
+                    "pagina_final": paginas_da_bula[-1][0],
                 },
             )
         )
@@ -111,6 +114,97 @@ def criar_documento(caminho_arquivo: str | Path) -> Document:
 
 
 def dividir_bula(
+    documento: Document,
+    max_tokens: int = 500,
+    overlap_tokens: int = 50,
+) -> list[Document]:
+    """Divide por seção e mantém a página física de cada trecho."""
+    pagina_re = re.compile(r"(?m)^<<<PAGINA_PDF:(\d+)>>>\s*\n?")
+    marcadores = list(pagina_re.finditer(documento.page_content))
+    if not marcadores:
+        return _dividir_bula_legado(documento, max_tokens, overlap_tokens)
+
+    splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+        encoding_name="cl100k_base",
+        chunk_size=max_tokens,
+        chunk_overlap=overlap_tokens,
+        separators=["\n\n", "\n", ". ", "; ", " ", ""],
+    )
+    paginas: list[tuple[int, str]] = []
+    for posicao, marcador in enumerate(marcadores):
+        inicio = marcador.end()
+        fim = marcadores[posicao + 1].start() if posicao + 1 < len(marcadores) else None
+        paginas.append((int(marcador.group(1)), documento.page_content[inicio:fim].strip()))
+
+    chunks_finais: list[Document] = []
+    ocorrencias_por_secao: Counter[int] = Counter()
+    contador_subchunks: Counter[tuple[int, int, int]] = Counter()
+    secao_ativa: tuple[int, str, int] | None = None
+
+    for pagina_pdf, texto_pagina in paginas:
+        secoes = re.split(r"(?m)(?=^\s*\d+\.\s+)", texto_pagina)
+        for secao in secoes:
+            secao = secao.strip()
+            if not secao:
+                continue
+
+            match = re.match(r"^(\d+)\.\s+([^\n]+)", secao)
+            if match:
+                numero_secao = int(match.group(1))
+                titulo_secao = match.group(2).strip()
+                conteudo = secao[match.end():].strip()
+                ocorrencias_por_secao[numero_secao] += 1
+                ocorrencia_secao = ocorrencias_por_secao[numero_secao]
+                secao_ativa = (numero_secao, titulo_secao, ocorrencia_secao)
+            elif secao_ativa:
+                numero_secao, titulo_secao, ocorrencia_secao = secao_ativa
+                conteudo = secao
+            else:
+                numero_secao = 0
+                titulo_secao = "APRESENTAÇÕES E COMPOSIÇÃO"
+                conteudo = secao
+                ocorrencias_por_secao[0] += 1
+                ocorrencia_secao = ocorrencias_por_secao[0]
+                secao_ativa = (numero_secao, titulo_secao, ocorrencia_secao)
+
+            for sub_chunk in splitter.create_documents([conteudo]):
+                chave = (pagina_pdf, numero_secao, ocorrencia_secao)
+                contador_subchunks[chave] += 1
+                indice = contador_subchunks[chave]
+                chunk_id = (
+                    f"{documento.metadata['bula_index']}.p{pagina_pdf}."
+                    f"{numero_secao}.{ocorrencia_secao}.{indice}"
+                )
+                texto_chunk = (
+                    f"Medicamento: {documento.metadata['medicamento']}\n"
+                    f"Forma farmacêutica: {documento.metadata['forma_farmaceutica']}\n"
+                    f"{numero_secao}. {titulo_secao}\n\n{sub_chunk.page_content}"
+                )
+                arquivo_id = documento.metadata.get("arquivo_id") or sha256(
+                    str(documento.metadata["source"]).encode("utf-8")
+                ).hexdigest()
+                id_documento = sha256(
+                    f"{arquivo_id}|{chunk_id}".encode("utf-8")
+                ).hexdigest()
+                chunks_finais.append(
+                    Document(
+                        id=id_documento,
+                        page_content=texto_chunk,
+                        metadata={
+                            **documento.metadata,
+                            "chunk_id": chunk_id,
+                            "section_number": numero_secao,
+                            "section_title": titulo_secao,
+                            "pagina_pdf": pagina_pdf,
+                            "pagina_pdf_final": pagina_pdf,
+                        },
+                    )
+                )
+
+    return chunks_finais
+
+
+def _dividir_bula_legado(
     documento: Document,
     max_tokens: int = 500,
     overlap_tokens: int = 50

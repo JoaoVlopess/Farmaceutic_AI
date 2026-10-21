@@ -5,6 +5,7 @@ venv/
 __pycache__/
 *.pyc
 db/
+bulas_processadas/
 
 # --- Ambientes e Segurança ---
 # Ignora arquivos com senhas, chaves de API e tokens

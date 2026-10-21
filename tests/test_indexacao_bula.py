@@ -67,6 +67,27 @@ class IndexacaoBulaTest(unittest.TestCase):
             ["1.1.1.1", "1.1.2.1"],
         )
 
+    def test_chunks_de_pdf_preservam_numero_da_pagina(self):
+        documento = Document(
+            page_content=(
+                "<<<PAGINA_PDF:2>>>\n1. INDICAÇÕES\nPrimeira página.\n\n"
+                "<<<PAGINA_PDF:3>>>\nContinuação da indicação."
+            ),
+            metadata={
+                "source": "bula.pdf",
+                "arquivo_id": "abc",
+                "bula_index": 1,
+                "medicamento": "REMÉDIO X",
+                "medicamento_normalizado": "remedio x",
+                "forma_farmaceutica": "comprimido",
+            },
+        )
+
+        chunks = dividir_bula(documento)
+
+        self.assertEqual([chunk.metadata["pagina_pdf"] for chunk in chunks], [2, 3])
+        self.assertEqual(chunks[1].metadata["section_number"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

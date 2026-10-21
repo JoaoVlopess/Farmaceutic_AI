@@ -6,6 +6,7 @@ charset-normalizer==3.5.1
 cryptography==50.0.1
 distro==1.9.0
 filetype==1.2.0
+fastapi==0.143.5
 google-auth==2.57.0
 google-genai==2.20.0
 h11==0.16.0
@@ -44,6 +45,7 @@ tiktoken==0.14.0
 typing-inspection==0.4.4
 typing_extensions==4.16.0
 urllib3==2.7.0
+uvicorn==0.54.0
 uuid_utils==0.17.0
 websockets==16.1.1
 xxhash==4.0.1
